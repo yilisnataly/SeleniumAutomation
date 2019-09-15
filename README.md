@@ -14,7 +14,7 @@ In order to have the test environment configured properly, you should take in co
     7. In the Variable Name field, enter JAVA_HOME, in the Variable Value field, enter your JDK installation path.
     8- Click OK and Apply Changes as prompted.
 - Download Eclipse or any other IDE of your preference.   
-- Install Apache Maven and set the environment variables path as mentioned above. Apache Maven is a dependency management system that       allows to distribute the libreries easier and creation of customizabled plugins, you don¿t need to add manually any java far files into    build path.  
+- Install Apache Maven and set the environment variables path MAVEN_HOME as mentioned above. Apache Maven is a dependency management system that       allows to distribute the libreries easier and creation of customizabled plugins, you don¿t need to add manually any java far files into    build path.  
   Dependencies and plugins to be added into the maven project:
     - TestNG
     - Selenium
