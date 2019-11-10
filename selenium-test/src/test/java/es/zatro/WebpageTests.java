@@ -4,7 +4,10 @@ import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+mport org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class WebpageTests {
@@ -44,15 +47,14 @@ public class WebpageTests {
 		driver.findElement(By.name("q")).sendKeys("adidas");
 		driver.findElement(By.className("new-btnBuscar")).click();
 
-		// sleep for 3 seconds
-		sleep(3000);
-
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		
 		// Close pop up
-
-		driver.findElement(By.cssSelector("div.js-cerrar-popup-newsletter")).click();
-
-		// sleep for 4 seconds
-		sleep(4000);
+		WebElement ClosePopUp = driver.findElement(By.cssSelector("div.js-cerrar-popup-newsletter"));
+		wait.until(ExpectedConditions.elementToBeClickable(ClosePopUp));		 
+		ClosePopUp.click();
+		
+		sleep(3000);
 
 		// Click the second item
 		driver.findElement(By.id("product2351")).click();
